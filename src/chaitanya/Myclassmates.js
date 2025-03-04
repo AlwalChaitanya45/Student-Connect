@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, Button } from "react-bootstrap";
 
-const Myclassmates = ({ name, favoriteFood, favoriteColor }) => {
-  const [loves, setLoves] = useState(0);
-
+const Myclassmates = ({ name, favoriteFood, favoriteColor, likes, handleLike }) => {
   return (
     <div
       style={{
@@ -17,7 +15,6 @@ const Myclassmates = ({ name, favoriteFood, favoriteColor }) => {
     >
       <div
         style={{
-          background: "linear-gradient(135deg, #1E3C72, #2A5298)", // Blue gradient background
           padding: "10px", // Adjust padding to reduce the background size
           borderRadius: "15px", // Rounded corners for the background
         }}
@@ -28,7 +25,7 @@ const Myclassmates = ({ name, favoriteFood, favoriteColor }) => {
             padding: "20px",
             textAlign: "center",
             borderRadius: "15px",
-            backgroundColor: "#ffffff", // Clean white card for contrast
+            backgroundColor: "#ffffff", // White background for the card
             fontFamily: "Arial, sans-serif",
             fontStyle: "italic",
             boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)", // Darker shadow for depth
@@ -39,7 +36,7 @@ const Myclassmates = ({ name, favoriteFood, favoriteColor }) => {
               style={{
                 fontSize: "1.8rem",
                 fontWeight: "bold",
-                color: "#004AAD", // Bold blue title
+                color: "black", // Bold blue title
                 fontStyle: "italic",
               }}
             >
@@ -55,7 +52,7 @@ const Myclassmates = ({ name, favoriteFood, favoriteColor }) => {
               <span style={{ color: favoriteColor }}> {favoriteColor} 🎨</span>
             </Card.Text>
 
-            {/* Centered Love Button (❤️ Reaction) */}
+            {/* Like Button and Display Likes */}
             <div style={{ marginTop: "15px", display: "flex", justifyContent: "center" }}>
               <button
                 style={{
@@ -75,9 +72,9 @@ const Myclassmates = ({ name, favoriteFood, favoriteColor }) => {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
-                onClick={() => setLoves(loves + 1)}
+                onClick={handleLike}
               >
-                ❤️ {loves}
+                ❤️ {likes}
               </button>
             </div>
           </Card.Body>
