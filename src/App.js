@@ -176,7 +176,7 @@ function App() {
                     variant="warning"
                     onClick={() => handleEdit(index)}
                     style={{
-                      marginRight: "10px",
+                      marginRight: "9px",
                       background: "#A7C7E7", // Soft light blue background
                       borderColor: "#A7C7E7", // Matching border color
                       color: "#004AAD", // Dark blue text
